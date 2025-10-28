@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Para la niña que más amo</title>
+
+  <!-- Fuente bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffd6e8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #b03060;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      margin-bottom: 2rem;
+    }
+
+    /* Botón lindo */
+    .btn {
+      position: relative;
+      z-index: 2;
+      background: #ff8fb1;
+      color: white;
+      font-size: 1.3rem;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ff6fa9;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .emoji {
+      position: absolute;
+      top: -10vh;
+      animation: fall linear infinite;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-20vh);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Para la niña que más amo</h1>
+
+  <a href="https://cank09.github.io/La-mas-linda-del-mundo-es-only-nati/" class="btn">🌷 Siguiente</a>
+
+  <script>
+    const numEmojis = 40;
+    const emojis = ["❤️", "💖", "💞", "💕", "💓", "💗", "💘"];
+
+    for (let i = 0; i < numEmojis; i++) {
+      const span = document.createElement("span");
+      span.classList.add("emoji");
+      span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.fontSize = (1 + Math.random() * 2) + "rem";
+      span.style.animationDuration = (5 + Math.random() * 5) + "s";
+      span.style.animationDelay = (Math.random() * 5) + "s";
+      document.body.appendChild(span);
+    }
+  </script>
+</body>
+</html>
